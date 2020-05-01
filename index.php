@@ -55,7 +55,7 @@
                                     <img src="./assets/music-audio-alp-201709" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
                                 </div>
                                 <div class="pd-billboard-info">
-                                    <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce prueba mercado pago</h1>
+                                    <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce</h1>
                                 </div>
                             </div>
                         </div>
@@ -550,6 +550,34 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+
+        <?php
+            require_once 'vendor/autoload.php';
+            MercadoPago\SDK::setClientId("7942174200900929");
+            MercadoPago\SDK::setClientSecret("uFJyHuc7pj1l0T1OZr3JNWIFZmE7n5VP");
+
+            // Crea un objeto de preferencia
+            $preference = new MercadoPago\Preference();
+
+            // Crea un ítem en la preferencia
+            $item = new MercadoPago\Item();
+            $item->title = 'Samsung Galaxy S9';
+            $item->quantity = 1;
+            $item->unit_price = 15000.00;
+            $preference->items = array($item);
+            $preference->save();
+        ?>
+
+        <form action="/procesar-pago" method="POST">
+            <script
+            src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+            data-preference-id="<?php echo $preference->id; ?>">
+            </script>
+        </form>
+
+=======
+>>>>>>> e3aedbfa369010f518359439ddcfb5c7c45a088c
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
         <div class="as-footnotes ">
             <div class="as-footnotes-content">
